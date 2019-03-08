@@ -1,13 +1,10 @@
-
 package com.capgemini.heskuelita.data.db;
-
 
 import java.sql.Connection;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import com.capgemini.heskuelita.data.DataException;
-
 
 public class DBConnectionManager {
 
@@ -17,12 +14,12 @@ public class DBConnectionManager {
 	private String password;
 	private String driver;
 
-    private BasicDataSource dataSource;
+	private BasicDataSource dataSource;
 
 
 	public DBConnectionManager (String url, String u, String p, String d) {
 
-	    super ();
+		super ();
 		this.dbURL = url;
 		this.user  = u;
 		this.password = p;
@@ -32,43 +29,42 @@ public class DBConnectionManager {
 	}
 
 
-    private void setup ()  {
+	private void setup ()  {
 
-        // Create a new Datasource.
-        this.dataSource = new BasicDataSource ();
+		// Create a new Datasource.
+		this.dataSource = new BasicDataSource ();
 
-        this.dataSource.setUrl (this.dbURL);
-        this.dataSource.setUsername (this.user);
-        this.dataSource.setPassword (this.password);
-        this.dataSource.setMinIdle (50);
-        this.dataSource.setMaxIdle (100);
-        this.dataSource.setMaxOpenPreparedStatements (1000);
-        this.dataSource.setDriverClassName (this.driver);
-    }
+		this.dataSource.setUrl (this.dbURL);
+		this.dataSource.setUsername (this.user);
+		this.dataSource.setPassword (this.password);
+		this.dataSource.setMinIdle (50);
+		this.dataSource.setMaxIdle (100);
+		this.dataSource.setMaxOpenPreparedStatements (1000);
+		this.dataSource.setDriverClassName (this.driver);
+	}
 
-	
+
 	public Connection getConnection () {
 
-	    try {
+		try {
 
-            return this.dataSource.getConnection ();
+			return this.dataSource.getConnection ();
 
-        } catch (Exception e) {
+		} catch (Exception e) {
 
-	        throw new DataException(e);
-        }
+			throw new DataException(e);
+		}
 	}
-	
+
 	public void closeConnection () {
 
-	    try {
+		try {
 
-            this.dataSource.close ();
+			this.dataSource.close ();
 
-        } catch (Exception e) {
+		} catch (Exception e) {
 
-	        e.printStackTrace ();
-        }
-
+			e.printStackTrace ();
+		}
 	}
 }

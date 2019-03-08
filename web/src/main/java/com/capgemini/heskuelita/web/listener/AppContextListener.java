@@ -7,7 +7,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.capgemini.heskuelita.data.db.DBConnectionManager;
+import com.capgemini.heskuelita.data.db.DBConnectionManager ;
 
 
 @WebListener
