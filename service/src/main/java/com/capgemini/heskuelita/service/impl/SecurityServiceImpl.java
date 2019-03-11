@@ -31,5 +31,19 @@ public class SecurityServiceImpl implements ISecurityService {
             throw new SecurityException(e);
         }
     }
+
+    @Override
+    public void register(User user) throws SecurityException {
+
+        try {
+
+            user = this.userDao.register (user.getName(), user.getLastName(), user.getBirthdate(), user.getDocumentationType(), user.getIdentification(), user.getTelephone(), user.getGender(), user.getCountry(), user.getState(), user.getCity(), user.getUserName(), user.getPassword(), user.getEmail(),
+            user.getCreated(), user.getUpdated());
+        } catch (Exception e) {
+
+            throw new SecurityException(e);
+        }
+
+    }
 }
 

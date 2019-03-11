@@ -63,7 +63,8 @@ public class LoginServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendRedirect ("err.jsp");
+            resp.sendRedirect ("error.jsp");
         }
     }
 }
+

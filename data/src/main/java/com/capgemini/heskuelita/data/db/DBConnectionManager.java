@@ -8,7 +8,6 @@ import com.capgemini.heskuelita.data.DataException;
 
 public class DBConnectionManager {
 
-
 	private String dbURL;
 	private String user;
 	private String password;

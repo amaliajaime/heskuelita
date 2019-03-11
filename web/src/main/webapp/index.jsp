@@ -20,7 +20,13 @@
         <br>
         Password: <input type="password" name="pwd">
         <br>
+
         <input type="submit" value="Login">
+
+     <br>
+
+        <input type="submit" action="register.jsp" value="Register">
+
     </form>
 
     <br>

@@ -9,11 +9,20 @@ import lombok.*;
 @NoArgsConstructor
 public class User {
 
-    private String userName;
+    private String name ;
+    private String lastName ;
+    private LocalDate birthdate ;
+    private String documentationType ;
+    private Integer identification ;
+    private Integer telephone ;
+    private String gender ;
+    private String country ;
+    private String state ;
+    private String city ;
 
-    private String password;
-
-    private String email;
+    private String userName ;
+    private String password ;
+    private String email ;
 
     private LocalDate created;
 
