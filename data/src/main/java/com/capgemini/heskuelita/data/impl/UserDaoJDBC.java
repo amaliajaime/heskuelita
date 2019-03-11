@@ -53,18 +53,17 @@ public class UserDaoJDBC implements IUserDao {
     }
 
     @Override
-        public User register(String name, String lastName, LocalDate birthdate, String documentationType, Integer identification,
-                Integer telephone, String gender, String country, String state, String city,
-                String userName, String password, String email, LocalDate created, LocalDate updated) {
-            User us = null;
+        public void register(User user) {
             try {
 
                 Statement stm = this.conn.createStatement();
 
-                stm.executeUpdate("INSERT INTO student (name, lastName, birthdate, documentationType, identification,telephone, gender, country, state, city, userName, password, email");
-                stm.executeUpdate("INSERT INTO users (userName, password, email)");
 
-                us = new User();
+                stm.executeUpdate("INSERT INTO users (user.userName, user.password, user.email)");
+
+              //  stm.executeUpdate("INSERT INTO student (user.name, user.lastName, user.birthdate, user.documentationType, user.identification, user.telephone, user.gender, user.country, user.state, user.city, default, user.userName, user.password, user.email");
+
+              /**  us = new User();
 
                 us.setName (name) ;
                 us.setLastName (lastName) ;
@@ -81,7 +80,7 @@ public class UserDaoJDBC implements IUserDao {
 
                 us.setUserName (userName) ;
                 us.setPassword (password) ;
-                us.setEmail (email) ;
+                us.setEmail (email) ; **/
 
 
 
@@ -89,7 +88,6 @@ public class UserDaoJDBC implements IUserDao {
 
                 throw new DataException(e);
             }
-            return us;
         }
 
 

@@ -47,20 +47,18 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
+
         User user = new User();
+
         user.setName (req.getParameter("name")) ;
         user.setLastName (req.getParameter("lastName")) ;
 
-       // user.setBirthdate (req.getParameter("birthdate")) ;
+       //user.setBirthdate(new LocalDate (req.getParameter("birthdate"))) ;
 
         user.setDocumentationType (req.getParameter("documentationType")) ;
        // user.setIdentification (req.getParameter("identification")) ;
-      //  user.setTelephone (req.getParameter("telephone")) ;
+        // user.setTelephone ((Integer)req.getParameter("telephone")) ;
         user.setGender (req.getParameter("gender")) ;
-        user.setCountry (req.getParameter("country")) ;
-        user.setState (req.getParameter("state")) ;
-        user.setCity (req.getParameter("city")) ;
-
         user.setUserName (req.getParameter ("user")) ;
         user.setPassword (req.getParameter ("password")) ;
         user.setEmail (req.getParameter("email")) ;

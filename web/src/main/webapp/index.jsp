@@ -6,32 +6,33 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
 
 </head>
 <body>
-    <h1> Bienvenidos a la Escuelita Java - Capgemini</h1>
+<h1> Bienvenidos a la Escuelita Java - Capgemini</h1>
 
 <form action="login" method="post" >
 
-        Username: <input type="text" name="user">
-        <br>
-        Password: <input type="password" name="pwd">
-        <br>
+    Username: <input type="text" name="user">
+    <br>
+    Password: <input type="password" name="pwd">
+    <br>
 
-        <input type="submit" value="Login">
-
-     <br>
-
-        <input type="submit" action="register.jsp" value="Register">
-
-    </form>
+    <input type="submit" value="Login">
 
     <br>
 
-    </form>
+</form>
+
+<a href="register.jsp"> Register </a>
+
+<br>
+
+</form>
 
 </body>
 </html>

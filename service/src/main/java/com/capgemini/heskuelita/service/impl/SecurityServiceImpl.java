@@ -37,8 +37,7 @@ public class SecurityServiceImpl implements ISecurityService {
 
         try {
 
-            user = this.userDao.register (user.getName(), user.getLastName(), user.getBirthdate(), user.getDocumentationType(), user.getIdentification(), user.getTelephone(), user.getGender(), user.getCountry(), user.getState(), user.getCity(), user.getUserName(), user.getPassword(), user.getEmail(),
-            user.getCreated(), user.getUpdated());
+            this.userDao.register (user);
         } catch (Exception e) {
 
             throw new SecurityException(e);

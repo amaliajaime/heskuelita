@@ -36,108 +36,79 @@
 <body>
 <h2> Datos: </h2>
 
-<form action="register" class=""role="form">
+<form action="register" class=""role="form"method="post">
     <div class="form-group">
         <label class=""for="name">Name: </label>
-        <input class="form-control"id="nombre"type="text" placeholder="Name">
+        <input class="form-control"id="nombre"type="text" placeholder="Name" name="ctrlName">
     </div>
 
     <div class="">
         <label class=""for="last name">Last name: </label>
-        <input class="form-control"id="last nombre"type="text" placeholder="Last name">
+        <input class="form-control"id="last nombre"type="text" placeholder="Last name" name ="ctrlLastName">
     </div>
-</form>
 
-<form action="resgister" class="">
+
+
     <div class="form-group">
-        <label class=""for="last name">Birthday: </label>
-        <input class="form-control"id="birthday"type="date" placeholder="">
+        <label class=""for="last name">Birthdate: </label>
+        <input class="form-control"id="birthday"type="date" placeholder="" name="ctrlBirthdate">
         <br>
 
         <label class=""for= "option">Documentation type:</label>
-        <select class="form-control" name=""id="documentation">
+        <select class="form-control" name="ctrlDoc"id="documentation">
             <option value="dni">DNI</option>
             <option value="pasaport">Pasaport</option>
         </select>
         <br>
 
         <label class=""for="identification">Identification:</label>
-        <input class="form-control" id="identification"type="tel"placeholder="Identification">
+        <input class="form-control" id="identification"type="tel"placeholder="Identification" name="ctrlIdentif">
         <br>
 
         <label class=""for="telephone">Telephone:</label>
-        <input class="form-control" id="telephone"type="tel"placeholder="Telephone">
+        <input class="form-control" id="telephone"type="tel"placeholder="Telephone"name ="ctrlTelephone">
         <br>
 
         <div class="radio">
             <label>
-                Sexo: <input type="radio" name="sexo" id="Mujer" value="mujer"checked>
+                Gender: <input type="radio" name="ctrlGender" id="Mujer" value="mujer"checkedn>
                 Mujer
             </label>
         </div>
 
         <div class="radio">
             <label>
-                <input type="radio" name="sexo"id="Hombre"value="hombre"checked>
+                <input type="radio" name="ctrlGender"id="Hombre"value="hombre"checked>
                 Hombre
             </label>
         </div>
 
         <div class="radio">
             <label>
-                <input type="radio" name="sexo" id="Otro" value="otro"checked>
+                <input type="radio" name="ctrlGender" id="Otro" value="otro"checked>
                 Otro
             </label>
         </div>
 
-        <div class="form-group">
-            <label for="select">Country:
-
-                <select class="form-control">
-                    <option value="1">--Seleccionar--</option>
-                    <option value="2">Argentina</option>
-                    <option value="3">Brasil</option>
-                    <option value="4">Chile</option>
-                    <option value="5">Bolivia</option>
-                    <option value="6">Peru</option>
-
-                </select>
-            </label>
-        </div>
-
-        <label class=""for="state">State:</label>
-        <input class="form-control" id="state"type="text"placeholder="State">
-        <br>
-
-        <label class=""for="city">City:</label>
-        <input class="form-control" id="city"type="text"placeholder="City">
-        <br>
-
-        <label class=""for="adrees">Adress:</label>
-        <input class="form-control" id="adress"type="text"placeholder="street, number, zipcode">
-        <br>
 
         <label class=""for="username">Username:</label>
-        <input class="form-control" id="username"type="text"placeholder="Username">
+        <input class="form-control" id="username"type="text"placeholder="Username" name=" ctrlUserName">
         <br>
 
         <label class=""for="email">Email:</label>
-        <input class="form-control" id="email"type="text"placeholder="Email">
+        <input class="form-control" id="email"type="text"placeholder="Email" name = "ctrlEmail">
         <br>
 
         <label class=""for="password">Password:</label>
-        <input class="form-control" id="password"type="number"placeholder="Password">
+        <input class="form-control" id="password"type="text"placeholder="Password" name="ctrlPsw">
         <br>
 
-        <label for:"Archivo"> Picture:</label>
-        <input type="file" id="archivo">
-
         <br>
+    </div>
 
+    </br>
 
-</br>
-
-<button action = "" class="btn btn-primary">Siguiente</button>
+        <button type="submit" class="btn btn-primary">Siguiente</button>
 
 </form>
 

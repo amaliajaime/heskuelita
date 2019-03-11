@@ -2,11 +2,11 @@ package com.capgemini.heskuelita.core.beans;
 
 
 import java.time.LocalDate;
-import lombok.*;
+//import lombok.*;
 
 
-@Data
-@NoArgsConstructor
+//@Data
+//@NoArgsConstructor
 public class User {
 
     private String name ;
@@ -16,15 +16,87 @@ public class User {
     private Integer identification ;
     private Integer telephone ;
     private String gender ;
-    private String country ;
-    private String state ;
-    private String city ;
-
     private String userName ;
     private String password ;
     private String email ;
 
-    private LocalDate created;
+    public String getName() {
+        return name;
+    }
 
-    private LocalDate updated;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getDocumentationType() {
+        return documentationType;
+    }
+
+    public void setDocumentationType(String documentationType) {
+        this.documentationType = documentationType;
+    }
+
+    public Integer getIdentification() {
+        return identification;
+    }
+
+    public void setIdentification(Integer identification) {
+        this.identification = identification;
+    }
+
+    public Integer getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(Integer telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
