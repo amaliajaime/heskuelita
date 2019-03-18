@@ -56,17 +56,17 @@
 
         <label class=""for= "option">Documentation type:</label>
         <select class="form-control" name="ctrlDoc"id="documentation">
-            <option value="dni">DNI</option>
-            <option value="pasaport">Pasaport</option>
+            <option value="dni" nombre="ctrlDocType" type="text">DNI</option>
+            <option value="pasaport" nombre="ctrlDocType">Pasaport</option>
         </select>
         <br>
 
         <label class=""for="identification">Identification:</label>
-        <input class="form-control" id="identification"type="tel"placeholder="Identification" name="ctrlIdentif">
+        <input class="form-control" id="identification"type="number"placeholder="Identification" name="ctrlIdentif">
         <br>
 
         <label class=""for="telephone">Telephone:</label>
-        <input class="form-control" id="telephone"type="tel"placeholder="Telephone"name ="ctrlTelephone">
+        <input class="form-control" id="telephone"type="number"placeholder="Telephone"name ="ctrlTelephone">
         <br>
 
         <div class="radio">
@@ -92,7 +92,7 @@
 
 
         <label class=""for="username">Username:</label>
-        <input class="form-control" id="username"type="text"placeholder="Username" name=" ctrlUserName">
+        <input class="form-control" id="username"type="text"placeholder="Username" name="ctrlUserName">
         <br>
 
         <label class=""for="email">Email:</label>
@@ -104,6 +104,7 @@
         <br>
 
         <br>
+
     </div>
 
     </br>
