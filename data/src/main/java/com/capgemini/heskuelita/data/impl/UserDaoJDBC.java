@@ -3,15 +3,20 @@ package com.capgemini.heskuelita.data.impl;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
+import org.apache.log4j.Logger;
+
+import com.capgemini.heskuelita.core.beans.Student;
 import com.capgemini.heskuelita.core.beans.User;
 import com.capgemini.heskuelita.data.DataException;
 import com.capgemini.heskuelita.data.IUserDao;
 
 
 public class UserDaoJDBC implements IUserDao {
-
+    private Logger logger= Logger.getLogger(UserDaoJDBC.class);
 
     private Connection conn;
 
@@ -53,42 +58,49 @@ public class UserDaoJDBC implements IUserDao {
     }
 
     @Override
-        public void register(User user) {
-            try {
+        public void register(Student student) {
+        int r = 0;
+        int p = 0;
 
-                Statement stm = this.conn.createStatement();
+        try{
 
+            PreparedStatement pstmStudent = this.conn.prepareStatement("INSERT INTO student VALUES (?, ?, ?, ?, ?, ?, ?, default, ?, ?, ?)");
 
-                stm.executeUpdate("INSERT INTO users (user.userName, user.password, user.email)");
+            pstmStudent.setString(1, student.getName());
+            pstmStudent.setString(2, student.getLastName());
+            pstmStudent.setObject(3, student.getBirthdate());
+            pstmStudent.setString(4, student.getDocumentationType());
+            pstmStudent.setInt(5, student.getIdentification());
+            pstmStudent.setInt(6, student.getTelephone());
+            pstmStudent.setString(7, student.getGender());
 
-              //  stm.executeUpdate("INSERT INTO student (user.name, user.lastName, user.birthdate, user.documentationType, user.identification, user.telephone, user.gender, user.country, user.state, user.city, default, user.userName, user.password, user.email");
-
-              /**  us = new User();
-
-                us.setName (name) ;
-                us.setLastName (lastName) ;
-                us.setBirthdate (birthdate) ;
-                us.setDocumentationType (documentationType) ;
-                us.setIdentification (identification) ;
-                us.setTelephone (telephone) ;
-                us.setGender (gender) ;
-                us.setCountry (country) ;
-                us.setState (state) ;
-                us.setCity (city) ;
-                us.setCreated(created) ;
-                us.setUpdated(updated) ;
-
-                us.setUserName (userName) ;
-                us.setPassword (password) ;
-                us.setEmail (email) ; **/
+            pstmStudent.setString(8, student.getUser().getUserName()) ;
+            pstmStudent.setString(9, student.getUser().getEmail());
+            pstmStudent.setString(10, student.getUser().getPassword());
 
 
+            PreparedStatement pstmUser = this.conn.prepareStatement("INSERT INTO users VALUES (?, ?, ?)");
+            pstmUser.setString(1, student.getUserName()) ;
+            pstmUser.setString(2, student.getEmail());
+            pstmUser.setString(3, student.getPassword());
 
-            } catch (Exception e) {
+            logger.info("Nombre de usuario: " + student.getUserName());
+            logger.info("Email de usuario: " + student.getEmail());
+            logger.info("Psw de usuario:" + student.getPassword());
 
-                throw new DataException(e);
-            }
+            r = pstmUser.executeUpdate();
+
+            System.out.println("Se registro el usuario: " + r);
+
+            p = pstmStudent.executeUpdate();
+            System.out.println("Se registro el estudiante: " + p);
+
+
+        }  catch(Exception e){
+            throw new DataException (e);
         }
+
+    }
 
 
 }
